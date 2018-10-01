@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+    @media print {
+        .sidebar { display: none; }
+        .content { margin-left: 10px; }
+
+        a:link { text-decoration: none; }
+
+        h2 { font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif; }
+        
+        tr {page-break-inside: avoid} /* wkhtmltopdf needs this to print tables > 2 pages */
+
+        #one-column-emphasis-teacher
+        {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 12px;
+            margin: 0px;
+            margin-top: 0px;
+            /* width: 450px; */
+            text-align: left;
+            border-collapse: collapse;
+        }
+        #one-column-emphasis-teacher th
+        {
+            font-weight: normal;
+            padding: 10px 15px;
+            color: #000000;
+            border-top: 1px solid #e8edff;
+        }
+        #one-column-emphasis-teacher thead th
+        {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 15px;
+            color: #000000;
+            border-top: none;
+            text-align: left;
+        }
+        #one-column-emphasis-teacher td
+        {
+            padding: 10px 15px;
+            color: #000000;
+            border-top: 1px solid #e8edff;
+        }
+        .oce-first
+        {
+            background: #d0dafd;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+        }
+        #one-column-emphasis-teacher tr:hover td
+        {
+            color: #00000;
+            background: #f9f625;
+        }
+        #one-column-emphasis
+        {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 11px;
+            margin: 0px;
+            margin-top: 0px;
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+        }
+        #one-column-emphasis th
+        {
+            font-weight: normal;
+            padding: 10px 15px;
+            color: #000000;
+            border-top: 1px solid #e8edff;
+        }
+        #one-column-emphasis thead th
+        {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 15px;
+            color: #000000;
+            border-top: none;
+            text-align: left;
+        }
+        #one-column-emphasis td
+        {
+            padding: 10px 15px;
+            color: #000000;
+            border-top: 1px solid #e8edff;
+        }
+        .oce-first
+        {
+            background: #d0dafd;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+        }
+        #one-column-emphasis tr:hover td
+        {
+            color: #00000;
+            background: #f9f625;
+        }
+        #box-table-a
+        {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 12px;
+            margin: 0px;
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+        }
+        #box-table-a th
+        {
+            font-size: 13px;
+            font-weight: normal;
+            padding: 8px;
+            background: #b9c9fe;
+            border-top: 4px solid #aabcfe;
+            border-bottom: 1px solid #fff;
+            color: #000000;
+        }
+        #box-table-a td
+        {
+            padding: 8px;
+            background: #efefef;
+            border-bottom: 1px solid #fff;
+            color: #000000;
+            border-top: 1px solid transparent;
+        }
+        #box-table-a tr:hover td
+        {
+            background: #f9f625;
+            color: #00000;
+        }
+
+        body
+        {
+            font-family: sans-serif;
+            font-size: small;
+        }
+    }
+    @media screen {
+        .sidebar { width: 250px;
+                    height: 100%;
+                    background-color: #f9f625;
+                    position: fixed;
+                    top: 0; }
+        .content { margin-left: 275px; }
+
+        a:link { text-decoration: none; }
+
+        h2 { font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif; }
+
+        #one-column-emphasis-teacher
+        {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 12px;
+            margin: 45px;
+            margin-top: 0px;
+            /* width: 450px; */
+            text-align: left;
+            border-collapse: collapse;
+        }
+        #one-column-emphasis-teacher th
+        {
+            font-weight: normal;
+            padding: 10px 15px;
+            color: #000000;
+            border-top: 1px solid #e8edff;
+        }
+        #one-column-emphasis-teacher thead th
+        {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 15px;
+            color: #000000;
+            border-top: none;
+            text-align: left;
+        }
+        #one-column-emphasis-teacher td
+        {
+            padding: 10px 15px;
+            color: #000000;
+            border-top: 1px solid #e8edff;
+        }
+        .oce-first
+        {
+            background: #d0dafd;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+        }
+        #one-column-emphasis-teacher tr:hover td
+        {
+            color: #00000;
+            background: #f9f625;
+        }
+        #one-column-emphasis
+        {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 12px;
+            margin: 45px;
+            margin-top: 0px;
+            width: 95%;
+            text-align: left;
+            border-collapse: collapse;
+        }
+        #one-column-emphasis th
+        {
+            font-weight: normal;
+            padding: 10px 15px;
+            color: #000000;
+            border-top: 1px solid #e8edff;
+        }
+        #one-column-emphasis thead th
+        {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 15px;
+            color: #000000;
+            border-top: none;
+            text-align: left;
+        }
+        #one-column-emphasis td
+        {
+            padding: 10px 15px;
+            color: #000000;
+            border-top: 1px solid #e8edff;
+        }
+        .oce-first
+        {
+            background: #d0dafd;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+        }
+        #one-column-emphasis tr:hover td
+        {
+            color: #00000;
+            background: #f9f625;
+        }
+        #box-table-a
+        {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 12px;
+            margin: 0px;
+            width: 1000px;
+            text-align: left;
+            border-collapse: collapse;
+        }
+        #box-table-a th
+        {
+            font-size: 13px;
+            font-weight: normal;
+            padding: 8px;
+            background: #b9c9fe;
+            border-top: 4px solid #aabcfe;
+            border-bottom: 1px solid #fff;
+            color: #000000;
+        }
+        #box-table-a td
+        {
+            padding: 8px;
+            background: #efefef;
+            border-bottom: 1px solid #fff;
+            color: #000000;
+            border-top: 1px solid transparent;
+        }
+        #box-table-a tr:hover td
+        {
+            background: #f9f625;
+            color: #00000;
+        }
+
+        body
+        {
+            font-family: sans-serif;
+            font-size: small;
+        }
+    }
+    </style>
+    <title>Education evaluation {{ name }}</title>
+</head>
+<body>
+    <div class = 'sidebar'>
+        <p><b>Teacher statistics & Course details for:</b><p>
+        <span style = 'cursor:pointer'>
+        <ul>
+            <li><a href="#top">{{ name }} ({{ erna }})</a></li>
+        </ul>
+        </span>
+        <b>Course features:</b>
+        <span style = 'cursor:pointer'>
+            {% for course in courses_index %}
+                <ul>
+                    <li><a href = '#{{ course }}'>{{ course }}</a></li>
+                </ul>
+            {% endfor %}
+        </span>
+    </div>
+    <div class = 'content'>
+        <h2 id = 'top'>Education evaluation {{ name }} ({{ erna }})</h2>
+        <p>This report lists the average score for each listed question (or aggregate) taken from the student evaluations for the course (academic year 2017-2018).</br>
+        Contact: André Cheung Tam He (e: cheungtamhe@ese.eur.nl)</p>
+		<h2>Course details</h2>
+        {{ courses_details }}
+        {% if courses_features %}
+            <h2>Course features</h2>
+            <p>(Note: if a course is listed twice there are two questionnaires available for this course. This can happen when a questionnare is replaced with an updated version.)</p>
+            {% for course_feature in courses_features %}
+                {% if course_feature.1 %}
+                    <h3><a id = '{{ course_feature.0 }}'>{{ course_feature.0 }}</a></h3>
+                    {% for question_text, question_answers in course_feature.1.iteritems() %}
+                        <h4>{{ question_text }}</h4>
+                        <table id = 'box-table-a'>
+                            <tbody>
+                            {% for item in question_answers %}
+                                <tr><td>{{ item }}</td></tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
